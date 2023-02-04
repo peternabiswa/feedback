@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Card from "./common/Card";
 import Button from "./common/Button";
 import FeedbackRating from "./FeedbackRating";
 import { v4 as uuidv4 } from "uuid";
+import { FeedbackContext } from "../context/FeedbackContext";
 
-function FeedbackForm({ addFeedback, createFeedback }) {
+function FeedbackForm() {
+  const { addFeedback, createFeedback } = useContext(FeedbackContext);
+
   const [text, setText] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -35,7 +38,7 @@ function FeedbackForm({ addFeedback, createFeedback }) {
 
     const newFeedback = { text, rating, id: uuidv4() };
 
-    //addFeedback(newFeedback);
+    addFeedback(newFeedback);
     createFeedback(newFeedback);
     setText("");
 

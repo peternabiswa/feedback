@@ -35,7 +35,7 @@ function FeedbackForm({ addFeedback, createFeedback }) {
 
     const newFeedback = { text, rating, id: uuidv4() };
 
-    // addFeedback(newFeedback);
+    //addFeedback(newFeedback);
     createFeedback(newFeedback);
     setText("");
 

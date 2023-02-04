@@ -16,7 +16,7 @@ function Header({ text = "Default", textColor = "purple", bgColor = "white" }) {
 }
 
 Header.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   textColor: PropTypes.string,
   bgColor: PropTypes.string,
 };

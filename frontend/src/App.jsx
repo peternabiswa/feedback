@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import Card from "./components/common/Card";
 import Header from "./components/common/Header";
 import FeedbackForm from "./components/FeedbackForm";
 import FeedbackList from "./components/FeedbackList";

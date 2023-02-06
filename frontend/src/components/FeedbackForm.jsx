@@ -7,7 +7,6 @@ import { FeedbackContext } from "../context/FeedbackContext";
 
 function FeedbackForm() {
   const { addFeedback, createFeedback } = useContext(FeedbackContext);
-
   const [text, setText] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");

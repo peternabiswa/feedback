@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import axios from "axios";
 
 export const FeedbackContext = createContext();
@@ -49,7 +49,7 @@ export const FeedbackProvider = ({ children }) => {
   function deleteFeedback(clickedId) {
     // console.log(`You clicked on ${item.text} with id ${item.id}`);
     if (window.confirm("Do you really want to delete this feedback?")) {
-      // setFeedback(feedback.filter((actualItem) => actualItem.id !== clickedId));
+      setFeedback(feedback.filter((actualItem) => actualItem.id !== clickedId));
       deleteFeedbackFromDB(clickedId);
     }
   }

@@ -41,8 +41,8 @@ function FeedbackForm() {
     createFeedback(newFeedback);
     setText("");
 
-    // TODO
-    // clear input rating as well
+    // TODO - DONE
+    setRating(0);
   }
 
   return (

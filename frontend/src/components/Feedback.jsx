@@ -5,7 +5,7 @@ import Card from "./common/Card";
 import styles from "./Feedback.module.css";
 
 function Feedback({ item }) {
-  const deleteFeedback = useContext(FeedbackContext);
+  const { deleteFeedback } = useContext(FeedbackContext);
   function handleDelete() {
     deleteFeedback(item.id);
   }

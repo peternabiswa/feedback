@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 export const FeedbackContext = createContext();
@@ -27,14 +27,14 @@ export const FeedbackProvider = ({ children }) => {
     });
   };
 
-  // const updateFeedback = () => {
-  //   fetch("http://localhost:4000/feedbacks", {
-  //     method: "PUT",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   });
-  // };
+  const updateFeedback = () => {
+    fetch("http://localhost:4000/feedbacks", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
 
   const createFeedback = (newFeedback) => {
     fetch("http://localhost:4000/feedbacks", {
@@ -64,7 +64,15 @@ export const FeedbackProvider = ({ children }) => {
   }, []);
 
   return (
-    <FeedbackContext.Provider value={{ feedback, deleteFeedback, addFeedback }}>
+    <FeedbackContext.Provider
+      value={{
+        feedback,
+        deleteFeedback,
+        addFeedback,
+        createFeedback,
+        setFeedback,
+      }}
+    >
       {children}
     </FeedbackContext.Provider>
   );

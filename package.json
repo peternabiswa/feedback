@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "dev": "concurrently \" cd backend && yarn server\" \"cd frontend && yarn client\""
+  }
+}
